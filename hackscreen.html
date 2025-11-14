@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>System Access Terminal</title>
+<style>
+body {
+    background: black;
+    color: #00ff00;
+    font-family: "Courier New";
+    padding: 20px;
+}
+#loading {
+    font-size: 18px;
+    white-space: pre-line;
+}
+#menu {
+    display: none;
+}
+.menu-item {
+    padding: 10px;
+    border: 1px solid #00ff00;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.menu-item:hover {
+    background: rgba(0,255,0,0.2);
+}
+.blink {
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+<div id="loading"></div>
+
+<div id="menu">
+    <h2>ACCESS PANEL</h2>
+    <div class="menu-item">▶ Snapchat Access Tools</div>
+    <div class="menu-item">▶ Instagram Scanner</div>
+    <div class="menu-item">▶ Facebook Surface Check</div>
+    <div class="menu-item">▶ Email Lookup Utility</div>
+    <p class="blink">Awaiting Command...</p>
+</div>
+
+<script>
+let text = [
+    "Initializing secure terminal...",
+    "Loading encrypted modules...",
+    "Bypassing virtual firewall...",
+    "Decrypting system keys...",
+    "Establishing connection...",
+    "Access Granted."
+];
+
+let i = 0;
+let output = document.getElementById("loading");
+
+function showLine() {
+    if (i < text.length) {
+        output.innerHTML += text[i] + "\n";
+        i++;
+        setTimeout(showLine, 900);
+    } else {
+        setTimeout(() => {
+            output.style.display = "none";
+            document.getElementById("menu").style.display = "block";
+        }, 800);
+    }
+}
+
+showLine();
+</script>
+</body>
+</html>

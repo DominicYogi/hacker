@@ -1,40 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>System Access Terminal</title>
 <style>
-body {
-    background: black;
-    color: #00ff00;
-    font-family: "Courier New";
-    padding: 20px;
-}
-#loading {
-    font-size: 18px;
-    white-space: pre-line;
-}
-#menu {
-    display: none;
-}
-.menu-item {
-    padding: 10px;
-    border: 1px solid #00ff00;
-    margin: 10px 0;
-    cursor: pointer;
-}
-.menu-item:hover {
-    background: rgba(0,255,0,0.2);
-}
-.blink {
-    animation: blink 0.7s infinite;
-}
-@keyframes blink {
-    50% { opacity: 0; }
-}
+    body {
+        background: #000;
+        color: #00ff00;
+        font-family: "Courier New", monospace;
+        padding: 15px;
+        margin: 0;
+    }
+
+    /* Make text scale on mobile */
+    #loading, #menu {
+        font-size: 4vw;
+        line-height: 1.4;
+    }
+
+    /* Prevent huge text on tablets/PC */
+    @media (min-width: 500px) {
+        #loading, #menu {
+            font-size: 18px;
+        }
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .menu-item {
+        padding: 12px;
+        border: 1px solid #00ff00;
+        margin: 12px 0;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    .menu-item:hover {
+        background: rgba(0,255,0,0.15);
+    }
+
+    .blink {
+        animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+
+    /* Ensure spacing on phones */
+    h2 {
+        font-size: 5vw;
+        margin-top: 0;
+    }
+
+    @media (min-width: 500px) {
+        h2 {
+            font-size: 22px;
+        }
+    }
 </style>
 </head>
 
 <body>
+
 <div id="loading"></div>
 
 <div id="menu">
@@ -74,5 +104,6 @@ function showLine() {
 
 showLine();
 </script>
+
 </body>
 </html>
